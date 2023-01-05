@@ -3,11 +3,11 @@ unofficial [solved.ac](https://solved.ac) API client for python
 
 ### Basic Usage
 ```python3
-from solvedac import Solvedac
+from solvedpy import Client
 
-sa = Solvedac()
-sa.set_token('YOUR_SOLVEDAC_TOEKEN_FROM_BROWSER_COOKIE')
+cl = Client()
+cl.set_token('YOUR_SOLVEDAC_TOEKEN_FROM_BROWSER_COOKIE')
 
-user_info = sa.User.show('USER_HANDLE')
-problems_d5 = sa.Search.problem('solvable:true+tier:21', sort='solved')
+user_info = cl.User.show('USER_HANDLE')
+problems_d5 = cl.Search.problem('solvable:true+tier:21', sort='solved')
 ```
