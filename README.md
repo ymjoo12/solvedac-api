@@ -1,5 +1,5 @@
 # solvedpy
-unofficial [solved.ac](https://solved.ac) API client for python
+Unofficial [solved.ac](https://solved.ac) API Client for Python
 
 ### Basic Usage
 ```python3
