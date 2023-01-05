@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup as bs
+# from bs4 import BeautifulSoup as bs
 
 
 class Config:
@@ -29,8 +29,8 @@ class Config:
                 raise Exception(f'HTTP error: {response.status_code} {response.reason} / {response.url}')
         if response.headers['Content-Type'].startswith('application/json'):
             return response.json()
-        elif response.headers['Content-Type'].startswith('text/html'):
-            return bs(response.text, 'lxml')
+        # elif response.headers['Content-Type'].startswith('text/html'):
+        #     return bs(response.text, 'lxml')
         else:
             return response.content
 

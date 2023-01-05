@@ -1,11 +1,11 @@
-from defs import Config, Model, Utils
-from typing import List, Tuple, Literal, LiteralString
+from .defs import Config, Model, Utils
+from typing import List, Tuple, Literal
 
 
-class Solvedac:
+class Client:
     
     def __init__(self, token: str=None):
-        self.config = SolvedacConfig(token)
+        self.config = ClientConfig(token)
         
         self.User = User(self.config)
         self.Search = Search(self.config)
@@ -23,7 +23,7 @@ class Solvedac:
         self.Post = Post(self.config)
 
 
-class SolvedacConfig(Config):
+class ClientConfig(Config):
     
     API_URL = 'https://solved.ac/api/v3'
     
@@ -31,7 +31,7 @@ class SolvedacConfig(Config):
         self.token = token
         super().__init__(
             base_url=self.API_URL,
-            cookies={ 'solvedacToken': token } if token else None,
+            cookies={ 'solvedacToken': token if token else None },
         )
     
     def set_token(self, token: str=None):
@@ -189,7 +189,7 @@ class Account(Model):
     def update_background(self, background_id: str):
         return self.api('PATCH', '/update_background', data={ 'backgroundId': background_id })
     
-    def update_picture(self, picture: Tuple[LiteralString, bytes, LiteralString]):
+    def update_picture(self, picture: Tuple[str, bytes, str]):
         return self.api('PATCH', '/update_picture', files={ 'picture': picture })
     
     def update_picture_by_url(self, image_url: str):
