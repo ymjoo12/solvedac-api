@@ -70,7 +70,7 @@ class User(Model):
     def grass(self, handle: str, topic: str='today-solved'):
         return self.api('GET', f'/grass', params={ 'handle': handle, 'topic': topic })
     
-    def history(self, handle: str, topic: HistoryTopic='solved'):
+    def history(self, handle: str, topic: HistoryTopic='rating'):
         return self.api('GET', f'/history', params={ 'handle': handle, 'topic': topic })
     
     def votes(self, handle: str, page: int=1):
