@@ -1,2 +1,2 @@
 # solvedac-api
-solved.ac api wrapper for python
+[solved.ac](solved.ac) api wrapper for python
