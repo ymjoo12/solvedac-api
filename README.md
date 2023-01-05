@@ -1,4 +1,4 @@
-# solvedac-api
+# solvedpy
 unofficial [solved.ac](https://solved.ac) API client for python
 
 ### Basic Usage
