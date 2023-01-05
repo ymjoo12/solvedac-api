@@ -222,7 +222,7 @@ class Achivement(Model):
     def __init__(self, config: Config, name: str):
         super().__init__(config, name)
         
-    def list(self, page: int=1, sort: SortType='added', asc: bool = True):
+    def list(self, page: int=1, sort: SortType='added', asc: bool=True):
         return self.api('GET', '/list', params={ 'page': page, 'sort': sort, 'direction': 'asc' if asc else 'desc' })
     
     def show(self, badge_id: str):
