@@ -61,8 +61,8 @@ class User(Model):
     def problem_tag_stats(self, handle: str):
         return self.api('GET', f'/problem_tag_stats', params={ 'handle': handle })
     
-    def top_ratings(self, handle: str):
-        return self.api('GET', f'/top_ratings', params={ 'handle': handle })
+    def tag_ratings(self, handle: str):
+        return self.api('GET', f'/tag_ratings', params={ 'handle': handle })
     
     def top_100(self, handle: str):
         return self.api('GET', f'/top_100', params={ 'handle': handle })
